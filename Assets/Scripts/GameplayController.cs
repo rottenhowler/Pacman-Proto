@@ -51,8 +51,6 @@ public class GameplayController : MonoBehaviour {
             builder.wallCount = numberOfWalls;
             mazeView.maze = builder.Build();
         }
-
-        GameObject.FindObjectOfType<NavMeshSurface>().BuildNavMesh();
     }
 
     private void InitDots() {

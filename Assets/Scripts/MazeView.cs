@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(NavMeshSurface))]
 public class MazeView : MonoBehaviour {
     [SerializeField] GameObject floorPrefab;
     [SerializeField] GameObject wallPrefab;
@@ -68,6 +70,8 @@ public class MazeView : MonoBehaviour {
                 }
             }
         }
+
+        GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     public Vector3 CellPosition(int x, int y) {
